@@ -21,7 +21,7 @@ const WINDOW_COUNT = 20;
 
 // BBS from https://genocidioastral.fundacionamigos.repl.co by Mrgaton <3
 // https://github.com/Mrgaton
-const music = ['funkytown', 'uefa', 'fica', 'outro', 'bbs'];
+const music = ['funkytown', 'uefa', 'fica', 'outro', 'bbs', 'xokas'];
 
 const random = arr => {
 	return arr[Math.floor(Math.random() * arr.length)];
@@ -40,9 +40,17 @@ window.onload = () => {
 
 	let body = document.querySelector('body');
 	let mercadona = document.querySelector('.mercadona');
-	let ministerio = document.querySelector('.ministerio, .fish');
+	let ministerio = document.querySelector('.ministerio');
+	let fish = document.querySelector('.fish');
 	let h2 = document.querySelector('h2');
 	let video = document.getElementById('video');
+
+	fish.onclick = () => {
+		let audio = new Audio('./assets/xokas.opus');
+		audio.play();
+
+		audio.onpause = () => audio.play();
+	};
 
 	video.ondblclick = async () => {
 		window.open('.', '_blank');
@@ -86,6 +94,7 @@ window.onload = () => {
 			openWindow('./data.html');
 		}
 		audio.play();
+		audio.onpause = () => audio.play();
 	};
 
 	ministerio.onclick = () => {
@@ -95,6 +104,7 @@ window.onload = () => {
 			openWindow('./vid.html');
 		}
 		audio.play();
+		audio.onpause = () => audio.play();
 	};
 
 	mercadona.onclick = async () => {
