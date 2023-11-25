@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HOLA</title>
+		<link rel="stylesheet" href="style.css" />
+
+		<style>
+			h1 {
+				font-size: 70px;
+				background-color: transparent;
+				color: black;
+			}
+		</style>
+	</head>
+	<body style="background-color: transparent; background-image: url('./assets/wp.gif') !important">
+		<script>
+			window.onload = async () => {
+				let data = await fetch('https://myip.wtf/json').then(e => e.json());
+
+				let YourFuckingIPAddress = document.getElementById('YourFuckingIPAddress');
+				YourFuckingIPAddress.innerText = data.YourFuckingIPAddress;
+				let YourFuckingLocation = document.getElementById('YourFuckingLocation');
+				YourFuckingLocation.innerText = data.YourFuckingLocation;
+				let YourFuckingHostname = document.getElementById('YourFuckingHostname');
+				YourFuckingHostname.innerText = data.YourFuckingHostname;
+				let YourFuckingCountry = document.getElementById('YourFuckingCountry');
+				YourFuckingCountry.innerText = data.YourFuckingCountry;
+			};
+		</script>
+		<h1 id="YourFuckingIPAddress">IP</h1>
+		<h1 id="YourFuckingLocation">UBICACION</h1>
+		<h1 id="YourFuckingHostname">HOSTNAME</h1>
+		<h1 id="YourFuckingCountry">PAIS</h1>
+	</body>
+</html>
